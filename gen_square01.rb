@@ -18,7 +18,7 @@ amplitude = 32767
   if ( last != crnt )
     amplitude = -amplitude
   end
-  w.sample_data[f] = amplitude * volume
+  w.sample_data[sample] = amplitude * volume
 
 end
 
