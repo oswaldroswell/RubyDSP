@@ -1,0 +1,23 @@
+#! usr/bin/env ruby
+
+require 'wavefile'
+include Math
+
+duration = 48000               # duration in samples
+freq     = 440.0               # frequency in Hz (A440)
+volume   = 0.9                 # 0.0 - 1.0
+filename = "sample.wav"        # filename
+
+w = WaveFile.new(1, 48000, 16) # mono, 48kHz, 16bit .wav file
+
+(0..duration).each do
+  |t|
+  w.sample_data[t] = sin(t * 2.0 * PI / freq) * volume * 32767
+end
+
+w.save(filename)
+
+# p_sine05.rb 2012/11/26 Oswald Roswell
+
+# This program creates a one second, 48k, 16bit sine-wave .wav file named "sample.wav."
+# It's about as simple as these things can get.
