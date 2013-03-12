@@ -4,8 +4,8 @@ require 'wavefile'
 
 duration  = 48000 
 frequency = 440
-volume    = .95
-filename  = squarewave.wav
+volume    = 0.95
+filename  = "squarewave.wav"
 
 w = WaveFile.new(1, 48000, 16)
 amplitude = 32767
